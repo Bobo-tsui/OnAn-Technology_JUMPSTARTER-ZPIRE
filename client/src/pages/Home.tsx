@@ -253,6 +253,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Business Model Section */}
+      <section className="section-padding bg-card">
+        <div className="container">
+          <div className="fade-in max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
+              Scalable Business Model
+            </h2>
+            
+            <div className="space-y-8">
+              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">B2B Partnerships (Main Revenue)</h3>
+                <p className="text-lg text-muted-foreground mb-4">
+                  Partner with funeral homes across Hong Kong and the Greater Bay Area. Funeral homes recommend our service to families, and we share revenue on a 70/30 split.
+                </p>
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <div className="bg-primary/5 px-4 py-2 rounded-full">
+                    <span className="font-semibold">Pricing:</span> 8,000-15,000 HKD per service
+                  </div>
+                  <div className="bg-primary/5 px-4 py-2 rounded-full">
+                    <span className="font-semibold">Split:</span> 70% OnAn / 30% Funeral Home
+                  </div>
+                </div>
+              </div>
+              
+              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">B2C Pre-need Services (Future Growth)</h3>
+                <p className="text-lg text-muted-foreground mb-4">
+                  Allow customers to purchase services in advance, building digital archives for fast delivery when needed. Partner with insurance companies, elderly communities, and hospitals.
+                </p>
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <div className="bg-primary/5 px-4 py-2 rounded-full">
+                    <span className="font-semibold">Pricing:</span> 5,000-8,000 HKD (installment options)
+                  </div>
+                </div>
+              </div>
+              
+              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Value-added Services</h3>
+                <ul className="space-y-3 text-lg text-muted-foreground">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                    <span>Digital memorial halls (AR/VR farewell spaces)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                    <span>3D printed memorial items (small sculptures)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                    <span>Technology licensing for overseas markets</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Market Opportunity Section */}
       <section className="section-padding bg-card relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
@@ -391,64 +449,6 @@ export default function Home() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Business Model Section */}
-      <section className="section-padding bg-card">
-        <div className="container">
-          <div className="fade-in max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
-              Scalable Business Model
-            </h2>
-            
-            <div className="space-y-8">
-              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-4 text-primary">B2B Partnerships (Main Revenue)</h3>
-                <p className="text-lg text-muted-foreground mb-4">
-                  Partner with funeral homes across Hong Kong and the Greater Bay Area. Funeral homes recommend our service to families, and we share revenue on a 70/30 split.
-                </p>
-                <div className="flex flex-wrap gap-4 text-sm">
-                  <div className="bg-primary/5 px-4 py-2 rounded-full">
-                    <span className="font-semibold">Pricing:</span> 8,000-15,000 HKD per service
-                  </div>
-                  <div className="bg-primary/5 px-4 py-2 rounded-full">
-                    <span className="font-semibold">Split:</span> 70% OnAn / 30% Funeral Home
-                  </div>
-                </div>
-              </div>
-              
-              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-4 text-primary">B2C Pre-need Services (Future Growth)</h3>
-                <p className="text-lg text-muted-foreground mb-4">
-                  Allow customers to purchase services in advance, building digital archives for fast delivery when needed. Partner with insurance companies, elderly communities, and hospitals.
-                </p>
-                <div className="flex flex-wrap gap-4 text-sm">
-                  <div className="bg-primary/5 px-4 py-2 rounded-full">
-                    <span className="font-semibold">Pricing:</span> 5,000-8,000 HKD (installment options)
-                  </div>
-                </div>
-              </div>
-              
-              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-4 text-primary">Value-added Services</h3>
-                <ul className="space-y-3 text-lg text-muted-foreground">
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
-                    <span>Digital memorial halls (AR/VR farewell spaces)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
-                    <span>3D printed memorial items (small sculptures)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
-                    <span>Technology licensing for overseas markets</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </section>
