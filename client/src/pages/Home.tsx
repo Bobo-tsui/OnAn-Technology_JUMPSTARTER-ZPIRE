@@ -320,31 +320,13 @@ export default function Home() {
       {/* Why Now Section */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container">
-          <div className="fade-in max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
+          <div className="fade-in max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
               Why Now?
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8">
-                <Globe className="h-12 w-12 text-accent mb-4" />
-                <h3 className="text-2xl font-semibold mb-4">Technology Maturity</h3>
-                <p className="text-primary-foreground/90 leading-relaxed">
-                  AI Photo-to-3D technology has reached a critical inflection point. What previously required days of manual modeling can now be completed in hours with AI assistance. The rise of humanoid robotics has created a complete supply chain for facial printing and makeup materials.
-                </p>
-              </div>
-              
-              <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8">
-                <Heart className="h-12 w-12 text-accent mb-4" />
-                <h3 className="text-2xl font-semibold mb-4">Social Change</h3>
-                <p className="text-primary-foreground/90 leading-relaxed">
-                  Cultural attitudes toward death are evolving. More people are comfortable preparing in advance, wanting to use photos from their best periods for their final ceremony. What was once taboo has become a business opportunity, creating a brand new global industry.
-                </p>
-              </div>
-            </div>
-            
-            <div className="fade-in mt-12 text-center bg-accent/20 backdrop-blur-sm rounded-lg p-8">
-              <p className="text-xl leading-relaxed text-primary-foreground/95">
-                <strong className="text-accent">Key Discovery:</strong> With AI and related industries' rapid development, the talent, technology, materials, and equipment for posthumous restoration have all advanced significantly. This makes it possible to meet massive demand at lower prices, creating a brand new global industry.
+            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8">
+              <p className="text-xl text-primary-foreground/95 leading-relaxed">
+                The convergence of three critical factors creates an unprecedented opportunity: <strong className="text-accent">AI technology has matured</strong> to enable rapid 3D reconstruction, <strong className="text-accent">social attitudes are evolving</strong> to embrace advance planning, and <strong className="text-accent">complete supply chains</strong> now exist for materials and equipment. What was once impossible is now scalable and affordable.
               </p>
             </div>
           </div>
