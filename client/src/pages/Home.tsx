@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { COMPANY_NAME, TAGLINE } from "@/const";
-import { ArrowRight, Brain, Users, TrendingUp, Sparkles, Heart, Globe } from "lucide-react";
+import { ArrowRight, Brain, Users, TrendingUp, Sparkles, Heart, Globe, Printer, Cpu, Palette, Link2, DollarSign, Trophy } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
@@ -365,21 +365,24 @@ export default function Home() {
           
           <div className="fade-in grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { title: "Top-tier 3D Printing Hub", desc: "Access to world-class manufacturing facilities" },
-              { title: "Leading AI Reconstruction", desc: "Cutting-edge image-to-3D technology" },
-              { title: "Exquisite Craftsmanship", desc: "Skilled labor and artistic expertise" },
-              { title: "Complete Industrial Chain", desc: "Efficient synergy across all production stages" },
-              { title: "Cost Advantage", desc: "Significant pricing benefits for customers" },
-              { title: "Market Leadership", desc: "First-mover in an untapped market" }
-            ].map((item, idx) => (
-              <div key={idx} className="fade-in bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <div className="w-6 h-6 rounded-full bg-accent" />
+              { title: "Top-tier 3D Printing Hub", desc: "Access to world-class manufacturing facilities", icon: Printer },
+              { title: "Leading AI Reconstruction", desc: "Cutting-edge image-to-3D technology", icon: Cpu },
+              { title: "Exquisite Craftsmanship", desc: "Skilled labor and artistic expertise", icon: Palette },
+              { title: "Complete Industrial Chain", desc: "Efficient synergy across all production stages", icon: Link2 },
+              { title: "Cost Advantage", desc: "Significant pricing benefits for customers", icon: DollarSign },
+              { title: "Market Leadership", desc: "First-mover in an untapped market", icon: Trophy }
+            ].map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <div key={idx} className="fade-in bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                    <IconComponent className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.desc}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

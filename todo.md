@@ -68,3 +68,8 @@
 - [x] Adjust Step 5 Ceremony Assistance image focus to head and hands
 - [x] Lock all 5 step images to fixed aspect ratio
 - [x] Prevent image distortion on different screen sizes
+
+## Competitive Advantages Icons & Tagline Update
+- [x] Generate icons for 6 competitive advantages
+- [x] Integrate icons into advantage cards
+- [x] Update tagline to "A Beautiful Farewell, A Lasting Memory"

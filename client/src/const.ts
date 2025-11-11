@@ -6,7 +6,7 @@ export const APP_LOGO = "https://placehold.co/128x128/E1E7EF/1F2937?text=App";
 
 // Company branding
 export const COMPANY_NAME = "OnAn Technology";
-export const TAGLINE = "Restoring Dignity, Bringing Solace";
+export const TAGLINE = "A Beautiful Farewell, A Lasting Memory";
 
 // Generate login URL at runtime so redirect URI reflects the current origin.
 export const getLoginUrl = () => {
