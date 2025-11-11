@@ -53,7 +53,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60 z-10" />
           <img 
-            src="/images/hero-background.png" 
+            src="/images/hero-background-new.png" 
             alt="Journey to light" 
             className="w-full h-full object-cover object-center"
           />
@@ -80,9 +80,12 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
-          <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-foreground/50 rounded-full" />
-          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground/50">
+            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+            <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+            <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+          </svg>
         </div>
       </section>
 
@@ -526,6 +529,7 @@ export default function Home() {
                 size="lg"
                 variant="default"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95 transition-transform text-lg px-8 py-6 h-auto min-h-[48px] touch-manipulation"
+                onClick={() => window.location.href = 'mailto:bobo.tsuipuichi@gmail.com?subject=Partnership Inquiry - OnAn Technology'}
               >
                 Partner With Us
               </Button>

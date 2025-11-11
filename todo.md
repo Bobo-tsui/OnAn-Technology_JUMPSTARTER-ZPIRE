@@ -108,3 +108,8 @@
 
 ## Hero Background Image Positioning
 - [x] Center the white tunnel exit in hero background image
+
+## Hero Section Updates
+- [x] Replace hero background with new tunnel image
+- [x] Change scroll indicator from mouse to finger icon
+- [x] Link "Partner with Us" button to bobo.tsuipuichi@gmail.com
