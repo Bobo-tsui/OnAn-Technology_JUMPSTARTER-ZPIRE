@@ -80,16 +80,11 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-foreground/50">
-            {/* Hand with pointing finger */}
-            <path d="M10 11V8.5a1.5 1.5 0 0 1 3 0V11m0 0V6.5a1.5 1.5 0 0 1 3 0V11m0 0V7.5a1.5 1.5 0 0 1 3 0V11m0 0v4a5 5 0 0 1-10 0V9.5a1.5 1.5 0 0 1 3 0V11"/>
-            {/* Radial lines around finger */}
-            <line x1="12" y1="2" x2="12" y2="4" strokeWidth="2"/>
-            <line x1="5" y1="5" x2="6.5" y2="6.5" strokeWidth="2"/>
-            <line x1="19" y1="5" x2="17.5" y2="6.5" strokeWidth="2"/>
-            <line x1="3" y1="11" x2="5" y2="11" strokeWidth="2"/>
-            <line x1="21" y1="11" x2="19" y2="11" strokeWidth="2"/>
-          </svg>
+          <img 
+            src="/images/tap-icon.png" 
+            alt="Tap to scroll" 
+            className="w-12 h-12 opacity-50"
+          />
         </div>
       </section>
 
