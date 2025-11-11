@@ -99,3 +99,9 @@
 
 ## Footer Copyright Update
 - [x] Update copyright year from 2024 to 2025
+
+
+## Revert to Version 28a44155 Icon
+- [x] Rollback to version 28a44155
+- [x] Restore original mouse scroll wheel icon
+- [x] Verify display matches version 28a44155
