@@ -96,3 +96,6 @@
 - [x] Add navigation links to all sections
 - [x] Implement smooth scroll to sections
 - [x] Add mobile-responsive menu toggle
+
+## Footer Copyright Update
+- [x] Update copyright year from 2024 to 2025
