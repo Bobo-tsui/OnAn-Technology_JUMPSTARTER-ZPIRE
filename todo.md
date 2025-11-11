@@ -120,3 +120,6 @@
 ## Hero Icon and Background Update
 - [x] Change hand icon to pointing finger gesture
 - [x] Replace hero background with new tunnel image
+
+## Hero Finger Icon Update
+- [x] Replace finger icon with tap gesture icon (finger pointing up with radial lines)
