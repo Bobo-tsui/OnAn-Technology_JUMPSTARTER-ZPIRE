@@ -128,3 +128,9 @@
 - [x] Use exact reference image as tap gesture icon
 - [x] Copy reference image to public/images directory
 - [x] Replace SVG with image element for perfect match
+
+## Tap Icon Display Fix
+- [x] Increase icon size from 48px to 64px for better visibility
+- [x] Adjust opacity from 50% to 60% for clearer display
+- [x] Add cache-busting parameter to image URL
+- [x] Verify icon displays correctly with reference image

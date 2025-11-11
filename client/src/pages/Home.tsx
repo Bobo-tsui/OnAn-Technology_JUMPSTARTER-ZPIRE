@@ -81,9 +81,9 @@ export default function Home() {
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
           <img 
-            src="/images/tap-icon.png" 
+            src="/images/tap-icon.png?v=2" 
             alt="Tap to scroll" 
-            className="w-12 h-12 opacity-50"
+            className="w-16 h-16 opacity-60"
           />
         </div>
       </section>
