@@ -2,9 +2,24 @@ import { Button } from "@/components/ui/button";
 import { COMPANY_NAME, TAGLINE } from "@/const";
 import { ArrowRight, Brain, Users, TrendingUp, Sparkles, Heart, Globe, Printer, Cpu, Palette, Link2, DollarSign, Trophy, Zap, Factory } from "lucide-react";
 import { useEffect, useRef } from "react";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
+
+  const menuSections = [
+    { id: "hero", label: "Home" },
+    { id: "mission", label: "Mission" },
+    { id: "challenge", label: "Challenge" },
+    { id: "solution", label: "Solution" },
+    { id: "technology", label: "Technology" },
+    { id: "business-model", label: "Business Model" },
+    { id: "market", label: "Market" },
+    { id: "why-now", label: "Why Now" },
+    { id: "advantages", label: "Advantages" },
+    { id: "impact", label: "Impact" },
+    { id: "contact", label: "Contact" },
+  ];
 
   useEffect(() => {
     // Intersection Observer for fade-in animations
@@ -32,14 +47,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <MobileMenu sections={menuSections} />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-primary text-primary-foreground overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-background text-foreground overflow-hidden pt-16">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60 z-10" />
           <img 
-            src="/images/hero-mask.webp" 
-            alt="Posthumous restoration mask" 
-            className="w-full h-full object-cover opacity-20"
+            src="/images/hero-background.png" 
+            alt="Journey to light" 
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="container relative z-20 text-center px-6 py-20">
@@ -47,10 +63,10 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance">
               {COMPANY_NAME}
             </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl mb-4 font-light text-primary-foreground/90">
+            <p className="text-xl sm:text-2xl lg:text-3xl mb-4 font-light text-foreground/90">
               {TAGLINE}
             </p>
-            <p className="text-base sm:text-lg lg:text-xl mb-12 text-primary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl mb-12 text-muted-foreground max-w-2xl mx-auto">
               Providing dignity and decency for the deceased, bringing solace to grieving families through AI-powered posthumous restoration
             </p>
             <Button
@@ -64,8 +80,8 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
-          <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
+          <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-foreground/50 rounded-full" />
           </div>
         </div>
       </section>
@@ -102,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Challenge Section */}
-      <section className="section-padding bg-card">
+      <section id="challenge" className="section-padding bg-card">
         <div className="container">
           <div className="fade-in max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
@@ -144,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* Solution Section */}
-      <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
+      <section id="solution" className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img 
             src="/images/ai-reconstruction.jpg" 
@@ -196,7 +212,7 @@ export default function Home() {
       </section>
 
       {/* Technology Section */}
-      <section className="section-padding bg-background">
+      <section id="technology" className="section-padding bg-background">
         <div className="container">
           <div className="fade-in max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
@@ -254,7 +270,7 @@ export default function Home() {
       </section>
 
       {/* Business Model Section */}
-      <section className="section-padding bg-card">
+      <section id="business-model" className="section-padding bg-card">
         <div className="container">
           <div className="fade-in max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
@@ -312,7 +328,7 @@ export default function Home() {
       </section>
 
       {/* Market Opportunity Section */}
-      <section className="section-padding bg-card relative overflow-hidden">
+      <section id="market" className="section-padding bg-card relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <img 
             src="/images/gba-skyline.jpg" 
@@ -376,7 +392,7 @@ export default function Home() {
       </section>
 
       {/* Why Now Section */}
-      <section className="section-padding bg-primary text-primary-foreground">
+      <section id="why-now" className="section-padding bg-primary text-primary-foreground">
         <div className="container">
           <div className="fade-in max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
@@ -418,7 +434,7 @@ export default function Home() {
       </section>
 
       {/* Advantages Section */}
-      <section className="section-padding bg-background">
+      <section id="advantages" className="section-padding bg-background">
         <div className="container">
           <div className="fade-in max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
@@ -454,7 +470,7 @@ export default function Home() {
       </section>
 
       {/* Social Impact Section */}
-      <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
+      <section id="impact" className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img 
             src="/images/memorial-peace.jpg" 
@@ -496,7 +512,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-accent text-accent-foreground">
+      <section id="contact" className="section-padding bg-accent text-accent-foreground">
         <div className="container">
           <div className="fade-in max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
