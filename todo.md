@@ -51,3 +51,11 @@
 - [x] Generate illustration for Step 5: Ceremony Assistance
 - [x] Integrate illustrations into Home.tsx
 - [x] Test visual flow on mobile devices
+
+## Image Updates
+- [x] Replace Step 1 Photo Collection illustration
+- [x] Replace Step 2 AI Reconstruction illustration
+- [x] Replace Step 3 3D Printing illustration
+- [x] Add grandmother 3D model images to Technology section
+- [x] Add caption explaining grandmother restoration
+- [x] Adjust Step 5 Ceremony image positioning to show head

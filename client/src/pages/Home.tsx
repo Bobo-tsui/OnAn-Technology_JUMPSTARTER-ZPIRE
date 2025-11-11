@@ -166,9 +166,9 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-12 text-center">Service Process Flow</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
-                { step: "1", title: "Photo Collection", desc: "Gather multi-angle photos from the deceased's lifetime", image: "/images/step1-photo-collection.jpg" },
-                { step: "2", title: "AI Reconstruction", desc: "Advanced algorithms analyze and create 3D model", image: "/images/step2-ai-reconstruction.jpg" },
-                { step: "3", title: "3D Printing", desc: "High-precision printing of the facial mask", image: "/images/step3-3d-printing.jpg" },
+                { step: "1", title: "Photo Collection", desc: "Gather multi-angle photos from the deceased's lifetime", image: "/images/step1-photo-collection-new.jpg" },
+                { step: "2", title: "AI Reconstruction", desc: "Advanced algorithms analyze and create 3D model", image: "/images/step2-ai-reconstruction-new.jpg" },
+                { step: "3", title: "3D Printing", desc: "High-precision printing of the facial mask", image: "/images/step3-3d-printing-new.jpg" },
                 { step: "4", title: "Professional Finishing", desc: "Expert coloring and cosmetic refinement", image: "/images/step4-finishing.jpg" },
                 { step: "5", title: "Ceremony Assistance", desc: "Support during the memorial service", image: "/images/step5-ceremony.jpg" }
               ].map((item, idx) => (
@@ -177,7 +177,7 @@ export default function Home() {
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${item.step === "5" ? "object-top" : ""}`}
                     />
                     <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-lg font-bold shadow-lg">
                       {item.step}
@@ -211,12 +211,22 @@ export default function Home() {
                   The system automatically generates a high-precision, highly realistic 3D digital model <strong className="text-foreground">within hours</strong>, dramatically reducing production time while maintaining exceptional quality.
                 </p>
               </div>
-              <div className="fade-in">
-                <img 
-                  src="/images/3d-printing.jpg" 
-                  alt="3D printing facial mask" 
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+              <div className="fade-in space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <img 
+                    src="/images/grandma-model-1.jpg" 
+                    alt="AI 3D model reconstruction - Grandmother restoration" 
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                  <img 
+                    src="/images/grandma-model-2.jpg" 
+                    alt="AI 3D model reconstruction - Grandmother restoration" 
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground italic text-center">
+                  Real case: 3D reconstruction of my late grandmother. The AI modeling achieved remarkable accuracy in capturing her facial features and likeness.
+                </p>
               </div>
             </div>
             <div className="fade-in bg-card rounded-lg p-8 shadow-lg">
