@@ -162,22 +162,31 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="fade-in max-w-5xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-8 text-center">Service Process Flow</h3>
-            <div className="grid sm:grid-cols-5 gap-4">
+          <div className="fade-in max-w-6xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-12 text-center">Service Process Flow</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
-                { step: "1", title: "Photo Collection", desc: "Gather multi-angle photos from the deceased's lifetime" },
-                { step: "2", title: "AI Reconstruction", desc: "Advanced algorithms analyze and create 3D model" },
-                { step: "3", title: "3D Printing", desc: "High-precision printing of the facial mask" },
-                { step: "4", title: "Professional Finishing", desc: "Expert coloring and cosmetic refinement" },
-                { step: "5", title: "Ceremony Assistance", desc: "Support during the memorial service" }
+                { step: "1", title: "Photo Collection", desc: "Gather multi-angle photos from the deceased's lifetime", image: "/images/step1-photo-collection.jpg" },
+                { step: "2", title: "AI Reconstruction", desc: "Advanced algorithms analyze and create 3D model", image: "/images/step2-ai-reconstruction.jpg" },
+                { step: "3", title: "3D Printing", desc: "High-precision printing of the facial mask", image: "/images/step3-3d-printing.jpg" },
+                { step: "4", title: "Professional Finishing", desc: "Expert coloring and cosmetic refinement", image: "/images/step4-finishing.jpg" },
+                { step: "5", title: "Ceremony Assistance", desc: "Support during the memorial service", image: "/images/step5-ceremony.jpg" }
               ].map((item, idx) => (
-                <div key={idx} className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <div className="w-12 h-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    {item.step}
+                <div key={idx} className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-primary-foreground/15 transition-colors">
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-lg font-bold shadow-lg">
+                      {item.step}
+                    </div>
                   </div>
-                  <h4 className="font-semibold mb-2 text-lg">{item.title}</h4>
-                  <p className="text-sm text-primary-foreground/80">{item.desc}</p>
+                  <div className="p-5 text-center">
+                    <h4 className="font-semibold mb-2 text-base">{item.title}</h4>
+                    <p className="text-xs text-primary-foreground/80 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>

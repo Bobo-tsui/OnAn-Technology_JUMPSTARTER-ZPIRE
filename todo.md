@@ -42,3 +42,12 @@
 - [x] Final mobile UX testing
 - [x] Add PWA support (manifest.json)
 - [x] Create checkpoint for deployment
+
+## Service Process Flow Visualization
+- [x] Generate illustration for Step 1: Photo Collection
+- [x] Generate illustration for Step 2: AI Reconstruction
+- [x] Generate illustration for Step 3: 3D Printing
+- [x] Generate illustration for Step 4: Professional Finishing
+- [x] Generate illustration for Step 5: Ceremony Assistance
+- [x] Integrate illustrations into Home.tsx
+- [x] Test visual flow on mobile devices
