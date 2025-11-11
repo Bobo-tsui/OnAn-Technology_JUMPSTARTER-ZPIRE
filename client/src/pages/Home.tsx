@@ -53,9 +53,9 @@ export default function Home() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60 z-10" />
           <img 
-            src="/images/hero-background-new.png" 
+            src="/images/hero-background.png" 
             alt="Journey to light" 
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="container relative z-20 text-center px-6 py-20">
@@ -80,11 +80,9 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
-          <img 
-            src="/images/tap-icon.png?v=2" 
-            alt="Tap to scroll" 
-            className="w-16 h-16 opacity-60"
-          />
+          <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-foreground/50 rounded-full" />
+          </div>
         </div>
       </section>
 
@@ -528,7 +526,6 @@ export default function Home() {
                 size="lg"
                 variant="default"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95 transition-transform text-lg px-8 py-6 h-auto min-h-[48px] touch-manipulation"
-                onClick={() => window.location.href = 'mailto:bobo.tsuipuichi@gmail.com?subject=Partnership Inquiry - OnAn Technology'}
               >
                 Partner With Us
               </Button>
