@@ -63,3 +63,8 @@
 ## AI-Powered Precision Section Update
 - [x] Replace grandmother images with new full-screen 3D model images
 - [x] Change layout from side-by-side to vertical stacking
+
+## Process Flow Image Adjustments
+- [x] Adjust Step 5 Ceremony Assistance image focus to head and hands
+- [x] Lock all 5 step images to fixed aspect ratio
+- [x] Prevent image distortion on different screen sizes

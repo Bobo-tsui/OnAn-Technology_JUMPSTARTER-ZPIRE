@@ -173,11 +173,12 @@ export default function Home() {
                 { step: "5", title: "Ceremony Assistance", desc: "Support during the memorial service", image: "/images/step5-ceremony.jpg" }
               ].map((item, idx) => (
                 <div key={idx} className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-primary-foreground/15 transition-colors">
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className={`w-full h-full object-cover ${item.step === "5" ? "object-top" : ""}`}
+                      className={`w-full h-full object-cover ${item.step === "4" ? "object-center" : item.step === "5" ? "object-[center_30%]" : ""}`}
+                      style={{ objectFit: 'cover' }}
                     />
                     <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-lg font-bold shadow-lg">
                       {item.step}
