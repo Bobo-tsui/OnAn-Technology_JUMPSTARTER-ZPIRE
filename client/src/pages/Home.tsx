@@ -201,30 +201,28 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
               Technology & Innovation
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              <div className="fade-in">
-                <h3 className="text-2xl font-semibold mb-4 text-primary">AI-Powered Precision</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <div className="mb-12">
+              <div className="fade-in mb-8">
+                <h3 className="text-2xl font-semibold mb-4 text-primary text-center">AI-Powered Precision</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6 text-center max-w-3xl mx-auto">
                   We utilize advanced AI plugins like Reallusion Character Creator's Headshot 2.0. Through deep learning algorithms, our AI analyzes multi-angle photos from the deceased's lifetime, accurately capturing facial contours, features, and skin texture from their youth or healthier periods.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
                   The system automatically generates a high-precision, highly realistic 3D digital model <strong className="text-foreground">within hours</strong>, dramatically reducing production time while maintaining exceptional quality.
                 </p>
               </div>
-              <div className="fade-in space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <img 
-                    src="/images/grandma-model-1.jpg" 
-                    alt="AI 3D model reconstruction - Grandmother restoration" 
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
-                  <img 
-                    src="/images/grandma-model-2.jpg" 
-                    alt="AI 3D model reconstruction - Grandmother restoration" 
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
-                </div>
-                <p className="text-sm text-muted-foreground italic text-center">
+              <div className="fade-in space-y-4 max-w-2xl mx-auto">
+                <img 
+                  src="/images/grandma-model-full-1.jpg" 
+                  alt="AI 3D model reconstruction - Grandmother restoration process" 
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+                <img 
+                  src="/images/grandma-model-full-2.jpg" 
+                  alt="AI 3D model reconstruction - Grandmother restoration result" 
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-muted-foreground italic text-center pt-2">
                   Real case: 3D reconstruction of my late grandmother. The AI modeling achieved remarkable accuracy in capturing her facial features and likeness.
                 </p>
               </div>
