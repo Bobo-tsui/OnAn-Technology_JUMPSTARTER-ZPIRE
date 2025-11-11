@@ -105,3 +105,6 @@
 - [x] Update menu button font to Playfair Display
 - [x] Adjust menu button font size to 20px
 - [x] Set menu button font weight to 500
+
+## Hero Background Image Positioning
+- [x] Center the white tunnel exit in hero background image

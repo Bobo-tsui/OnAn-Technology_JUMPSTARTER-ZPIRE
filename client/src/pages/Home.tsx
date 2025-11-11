@@ -55,7 +55,7 @@ export default function Home() {
           <img 
             src="/images/hero-background.png" 
             alt="Journey to light" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         <div className="container relative z-20 text-center px-6 py-20">
