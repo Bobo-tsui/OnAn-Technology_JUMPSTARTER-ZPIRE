@@ -1,28 +1,515 @@
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { APP_LOGO, APP_TITLE } from "@/const";
-import { Streamdown } from 'streamdown';
+import { COMPANY_NAME, TAGLINE } from "@/const";
+import { ArrowRight, Brain, Users, TrendingUp, Sparkles, Heart, Globe } from "lucide-react";
+import { useEffect, useRef } from "react";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
-  // Use APP_LOGO (as image src) and APP_TITLE if needed
+  useEffect(() => {
+    // Intersection Observer for fade-in animations
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    const fadeElements = document.querySelectorAll(".fade-in");
+    fadeElements.forEach((el) => observerRef.current?.observe(el));
+
+    return () => observerRef.current?.disconnect();
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center bg-primary text-primary-foreground overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80 z-10" />
+          <img 
+            src="/images/hero-mask.webp" 
+            alt="Posthumous restoration mask" 
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="container relative z-20 text-center px-6 py-20">
+          <div className="fade-in max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance">
+              {COMPANY_NAME}
+            </h1>
+            <p className="text-xl sm:text-2xl lg:text-3xl mb-4 font-light text-primary-foreground/90">
+              {TAGLINE}
+            </p>
+            <p className="text-base sm:text-lg lg:text-xl mb-12 text-primary-foreground/80 max-w-2xl mx-auto">
+              Providing dignity and decency for the deceased, bringing solace to grieving families through AI-powered posthumous restoration
+            </p>
+            <Button
+              size="lg"
+              variant="default"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 active:scale-95 transition-transform text-lg px-8 py-6 h-auto min-h-[48px] touch-manipulation"
+              onClick={() => scrollToSection("mission")}
+            >
+              Learn More <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
+          <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section id="mission" className="section-padding bg-background">
+        <div className="container">
+          <div className="fade-in max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+              Our Mission
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
+              Everyone desires to be eternally remembered in the most beautiful state of their life. We combine cutting-edge AI technology with compassionate care to restore dignity to the deceased and bring peace to their loved ones.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6 mt-12">
+              <div className="fade-in p-6 bg-card rounded-lg shadow-sm">
+                <Heart className="h-12 w-12 text-accent mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Compassion</h3>
+                <p className="text-muted-foreground">Bringing comfort to families in their time of grief</p>
+              </div>
+              <div className="fade-in p-6 bg-card rounded-lg shadow-sm">
+                <Brain className="h-12 w-12 text-accent mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Innovation</h3>
+                <p className="text-muted-foreground">Leveraging AI to achieve the impossible</p>
+              </div>
+              <div className="fade-in p-6 bg-card rounded-lg shadow-sm">
+                <Sparkles className="h-12 w-12 text-accent mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Dignity</h3>
+                <p className="text-muted-foreground">Honoring lives with beautiful final farewells</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Challenge Section */}
+      <section className="section-padding bg-card">
+        <div className="container">
+          <div className="fade-in max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
+              Addressing an Unmet Need
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="fade-in">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">The Challenge</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  Many individuals pass away with serious facial damage from accidents, illness, or other tragic circumstances. Traditional restoration techniques often fall short of family expectations, leaving loved ones without the peaceful closure they deserve.
+                </p>
+              </div>
+              <div className="fade-in">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Market Gap</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  Currently, there are no specialized AI-assisted silicone mask services in the Hong Kong market. Families are left with limited options during their most difficult moments.
+                </p>
+              </div>
+            </div>
+            <div className="fade-in bg-primary/5 rounded-lg p-8 border-l-4 border-accent">
+              <h3 className="text-xl font-semibold mb-4">Key Statistics</h3>
+              <div className="grid sm:grid-cols-3 gap-6">
+                <div>
+                  <div className="text-3xl font-bold text-accent mb-2">12,500+</div>
+                  <p className="text-sm text-muted-foreground">Annual cancer-related deaths in Hong Kong</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-accent mb-2">700+</div>
+                  <p className="text-sm text-muted-foreground">Annual suicide deaths requiring facial restoration</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-accent mb-2">2B+</div>
+                  <p className="text-sm text-muted-foreground">HKD annual funeral industry market size</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="/images/ai-reconstruction.jpg" 
+            alt="AI reconstruction technology" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container relative z-10">
+          <div className="fade-in max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              Our Solution
+            </h2>
+            <p className="text-xl text-primary-foreground/90 leading-relaxed">
+              We utilize state-of-the-art AI Photo-to-3D reconstruction technology to create lifelike posthumous masks, combining artificial intelligence with expert craftsmanship.
+            </p>
+          </div>
+          
+          <div className="fade-in max-w-5xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-8 text-center">Service Process Flow</h3>
+            <div className="grid sm:grid-cols-5 gap-4">
+              {[
+                { step: "1", title: "Photo Collection", desc: "Gather multi-angle photos from the deceased's lifetime" },
+                { step: "2", title: "AI Reconstruction", desc: "Advanced algorithms analyze and create 3D model" },
+                { step: "3", title: "3D Printing", desc: "High-precision printing of the facial mask" },
+                { step: "4", title: "Professional Finishing", desc: "Expert coloring and cosmetic refinement" },
+                { step: "5", title: "Ceremony Assistance", desc: "Support during the memorial service" }
+              ].map((item, idx) => (
+                <div key={idx} className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                  <div className="w-12 h-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                    {item.step}
+                  </div>
+                  <h4 className="font-semibold mb-2 text-lg">{item.title}</h4>
+                  <p className="text-sm text-primary-foreground/80">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Section */}
+      <section className="section-padding bg-background">
+        <div className="container">
+          <div className="fade-in max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
+              Technology & Innovation
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+              <div className="fade-in">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">AI-Powered Precision</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  We utilize advanced AI plugins like Reallusion Character Creator's Headshot 2.0. Through deep learning algorithms, our AI analyzes multi-angle photos from the deceased's lifetime, accurately capturing facial contours, features, and skin texture from their youth or healthier periods.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  The system automatically generates a high-precision, highly realistic 3D digital model <strong className="text-foreground">within hours</strong>, dramatically reducing production time while maintaining exceptional quality.
+                </p>
+              </div>
+              <div className="fade-in">
+                <img 
+                  src="/images/3d-printing.jpg" 
+                  alt="3D printing facial mask" 
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+            <div className="fade-in bg-card rounded-lg p-8 shadow-lg">
+              <h3 className="text-xl font-semibold mb-4">Key Technologies</h3>
+              <ul className="grid sm:grid-cols-2 gap-4">
+                <li className="flex items-start">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">AI facial reconstruction from 2D photos</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">High-precision 3D modeling and printing</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">Professional cosmetic finishing</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">Silicone mask production expertise</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Market Opportunity Section */}
+      <section className="section-padding bg-card relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="/images/gba-skyline.jpg" 
+            alt="Greater Bay Area skyline" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container relative z-10">
+          <div className="fade-in max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              A Growing Market with Profound Impact
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              The Greater Bay Area presents a massive opportunity for innovation in the funeral industry
+            </p>
+          </div>
+          
+          <div className="fade-in grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            <div className="bg-background rounded-lg p-8 shadow-sm">
+              <TrendingUp className="h-12 w-12 text-accent mb-4" />
+              <h3 className="text-2xl font-semibold mb-4">Market Size</h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-1">161.26B</div>
+                  <p className="text-muted-foreground">RMB - GBA funeral industry revenue (2024)</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-1">353.26B</div>
+                  <p className="text-muted-foreground">RMB - Projected revenue by 2035</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-background rounded-lg p-8 shadow-sm">
+              <Users className="h-12 w-12 text-accent mb-4" />
+              <h3 className="text-2xl font-semibold mb-4">Population</h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-1">86M</div>
+                  <p className="text-muted-foreground">Population in Greater Bay Area</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-1">31</div>
+                  <p className="text-muted-foreground">Major funeral homes across GBA cities</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="fade-in bg-accent/10 rounded-lg p-8 max-w-4xl mx-auto border-l-4 border-accent">
+            <h3 className="text-2xl font-semibold mb-4 text-center">Market Opportunity</h3>
+            <p className="text-lg text-center mb-6 text-muted-foreground">
+              With just <strong className="text-foreground">5% market penetration</strong>, the posthumous restoration service represents a
+            </p>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-accent mb-2">1.8 Billion</div>
+              <p className="text-xl text-muted-foreground">RMB revenue opportunity</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Now Section */}
+      <section className="section-padding bg-primary text-primary-foreground">
+        <div className="container">
+          <div className="fade-in max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
+              Why Now?
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8">
+                <Globe className="h-12 w-12 text-accent mb-4" />
+                <h3 className="text-2xl font-semibold mb-4">Technology Maturity</h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  AI Photo-to-3D technology has reached a critical inflection point. What previously required days of manual modeling can now be completed in hours with AI assistance. The rise of humanoid robotics has created a complete supply chain for facial printing and makeup materials.
+                </p>
+              </div>
+              
+              <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8">
+                <Heart className="h-12 w-12 text-accent mb-4" />
+                <h3 className="text-2xl font-semibold mb-4">Social Change</h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  Cultural attitudes toward death are evolving. More people are comfortable preparing in advance, wanting to use photos from their best periods for their final ceremony. What was once taboo has become a business opportunity, creating a brand new global industry.
+                </p>
+              </div>
+            </div>
+            
+            <div className="fade-in mt-12 text-center bg-accent/20 backdrop-blur-sm rounded-lg p-8">
+              <p className="text-xl leading-relaxed text-primary-foreground/95">
+                <strong className="text-accent">Key Discovery:</strong> With AI and related industries' rapid development, the talent, technology, materials, and equipment for posthumous restoration have all advanced significantly. This makes it possible to meet massive demand at lower prices, creating a brand new global industry.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages Section */}
+      <section className="section-padding bg-background">
+        <div className="container">
+          <div className="fade-in max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              Our Competitive Advantages
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Leveraging the Greater Bay Area's unique ecosystem
+            </p>
+          </div>
+          
+          <div className="fade-in grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { title: "Top-tier 3D Printing Hub", desc: "Access to world-class manufacturing facilities" },
+              { title: "Leading AI Reconstruction", desc: "Cutting-edge image-to-3D technology" },
+              { title: "Exquisite Craftsmanship", desc: "Skilled labor and artistic expertise" },
+              { title: "Complete Industrial Chain", desc: "Efficient synergy across all production stages" },
+              { title: "Cost Advantage", desc: "Significant pricing benefits for customers" },
+              { title: "Market Leadership", desc: "First-mover in an untapped market" }
+            ].map((item, idx) => (
+              <div key={idx} className="fade-in bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                  <div className="w-6 h-6 rounded-full bg-accent" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Business Model Section */}
+      <section className="section-padding bg-card">
+        <div className="container">
+          <div className="fade-in max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
+              Scalable Business Model
+            </h2>
+            
+            <div className="space-y-8">
+              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">B2B Partnerships (Main Revenue)</h3>
+                <p className="text-lg text-muted-foreground mb-4">
+                  Partner with funeral homes across Hong Kong and the Greater Bay Area. Funeral homes recommend our service to families, and we share revenue on a 70/30 split.
+                </p>
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <div className="bg-primary/5 px-4 py-2 rounded-full">
+                    <span className="font-semibold">Pricing:</span> 8,000-15,000 HKD per service
+                  </div>
+                  <div className="bg-primary/5 px-4 py-2 rounded-full">
+                    <span className="font-semibold">Split:</span> 70% OnAn / 30% Funeral Home
+                  </div>
+                </div>
+              </div>
+              
+              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">B2C Pre-need Services (Future Growth)</h3>
+                <p className="text-lg text-muted-foreground mb-4">
+                  Allow customers to purchase services in advance, building digital archives for fast delivery when needed. Partner with insurance companies, elderly communities, and hospitals.
+                </p>
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <div className="bg-primary/5 px-4 py-2 rounded-full">
+                    <span className="font-semibold">Pricing:</span> 5,000-8,000 HKD (installment options)
+                  </div>
+                </div>
+              </div>
+              
+              <div className="fade-in bg-background rounded-lg p-8 shadow-sm">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Value-added Services</h3>
+                <ul className="space-y-3 text-lg text-muted-foreground">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                    <span>Digital memorial halls (AR/VR farewell spaces)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                    <span>3D printed memorial items (small sculptures)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 mr-3 flex-shrink-0" />
+                    <span>Technology licensing for overseas markets</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Impact Section */}
+      <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="/images/memorial-peace.jpg" 
+            alt="Peaceful memorial" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container relative z-10">
+          <div className="fade-in max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
+              Creating Lasting Impact
+            </h2>
+            <p className="text-xl text-primary-foreground/90 leading-relaxed mb-12">
+              Beyond business success, we're changing lives and honoring legacies. Our service brings solace to grieving families, provides beautiful final farewells, and shifts cultural attitudes toward death and remembrance.
+            </p>
+            
+            <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8 mb-8">
+              <p className="text-lg italic text-primary-foreground/90 leading-relaxed">
+                "Everyone deserves to be remembered in the most beautiful state of their life. Through technology and compassion, we make this possible."
+              </p>
+            </div>
+            
+            <div className="grid sm:grid-cols-3 gap-6">
+              <div className="fade-in">
+                <div className="text-4xl font-bold text-accent mb-2">Families</div>
+                <p className="text-primary-foreground/80">Bringing peace and closure</p>
+              </div>
+              <div className="fade-in">
+                <div className="text-4xl font-bold text-accent mb-2">Industry</div>
+                <p className="text-primary-foreground/80">Driving innovation forward</p>
+              </div>
+              <div className="fade-in">
+                <div className="text-4xl font-bold text-accent mb-2">Society</div>
+                <p className="text-primary-foreground/80">Changing cultural attitudes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-accent text-accent-foreground">
+        <div className="container">
+          <div className="fade-in max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              Join Us in This Mission
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Whether you're a funeral home looking to enhance your services, a family seeking dignified options, or an investor interested in this growing market, we'd love to connect.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                variant="default"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95 transition-transform text-lg px-8 py-6 h-auto min-h-[48px] touch-manipulation"
+              >
+                Partner With Us
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground active:scale-95 transition-transform text-lg px-8 py-6 h-auto min-h-[48px] touch-manipulation"
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-primary text-primary-foreground py-12">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-4">{COMPANY_NAME}</h3>
+            <p className="text-primary-foreground/80 mb-6">{TAGLINE}</p>
+            <div className="border-t border-primary-foreground/20 pt-6">
+              <p className="text-sm text-primary-foreground/60">
+                © 2024 {COMPANY_NAME}. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
