@@ -81,10 +81,9 @@ export default function Home() {
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground/50">
-            <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
-            <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
-            <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
-            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+            <path d="M12 2v8"/>
+            <path d="M12 10c-1.5 0-2.5 1-2.5 2.5V18c0 1.5 1 2.5 2.5 2.5s2.5-1 2.5-2.5v-5.5c0-1.5-1-2.5-2.5-2.5z"/>
+            <path d="M8 14v4c0 2.2 1.8 4 4 4s4-1.8 4-4v-4"/>
           </svg>
         </div>
       </section>

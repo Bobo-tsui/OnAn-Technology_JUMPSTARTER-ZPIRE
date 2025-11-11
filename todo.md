@@ -116,3 +116,7 @@
 
 ## Hero Background Replacement
 - [x] Replace hero background with new tunnel image (with figure)
+
+## Hero Icon and Background Update
+- [x] Change hand icon to pointing finger gesture
+- [x] Replace hero background with new tunnel image
