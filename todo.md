@@ -99,3 +99,9 @@
 
 ## Footer Copyright Update
 - [x] Update copyright year from 2024 to 2025
+
+## MobileMenu Style Refinement
+- [x] Update company name font size to 24px
+- [x] Update menu button font to Playfair Display
+- [x] Adjust menu button font size to 20px
+- [x] Set menu button font weight to 500

@@ -24,7 +24,7 @@ export default function MobileMenu({ sections }: MobileMenuProps) {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between h-16 px-4">
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold text-primary">{COMPANY_NAME}</h1>
+            <h1 className="text-xl font-bold text-primary" style={{fontSize: '24px'}}>{COMPANY_NAME}</h1>
           </div>
           
           <Button
@@ -55,7 +55,8 @@ export default function MobileMenu({ sections }: MobileMenuProps) {
                 <li key={section.id}>
                   <button
                     onClick={() => scrollToSection(section.id)}
-                    className="w-full text-left text-2xl font-semibold py-3 px-4 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors touch-manipulation"
+                    className="w-full text-left py-3 px-4 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors touch-manipulation"
+                    style={{fontSize: '20px', fontWeight: '500', fontFamily: '"Playfair Display", Georgia, serif'}}
                   >
                     {section.label}
                   </button>
