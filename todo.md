@@ -113,3 +113,6 @@
 - [x] Replace hero background with new tunnel image
 - [x] Change scroll indicator from mouse to finger icon
 - [x] Link "Partner with Us" button to bobo.tsuipuichi@gmail.com
+
+## Hero Background Replacement
+- [x] Replace hero background with new tunnel image (with figure)
