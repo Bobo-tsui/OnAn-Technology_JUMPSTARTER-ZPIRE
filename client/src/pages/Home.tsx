@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { COMPANY_NAME, TAGLINE } from "@/const";
-import { ArrowRight, Brain, Users, TrendingUp, Sparkles, Heart, Globe, Printer, Cpu, Palette, Link2, DollarSign, Trophy } from "lucide-react";
+import { ArrowRight, Brain, Users, TrendingUp, Sparkles, Heart, Globe, Printer, Cpu, Palette, Link2, DollarSign, Trophy, Zap, Factory } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
@@ -320,14 +320,40 @@ export default function Home() {
       {/* Why Now Section */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container">
-          <div className="fade-in max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
+          <div className="fade-in max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
               Why Now?
             </h2>
-            <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8">
-              <p className="text-xl text-primary-foreground/95 leading-relaxed">
-                The convergence of three critical factors creates an unprecedented opportunity: <strong className="text-accent">AI technology has matured</strong> to enable rapid 3D reconstruction, <strong className="text-accent">social attitudes are evolving</strong> to embrace advance planning, and <strong className="text-accent">complete supply chains</strong> now exist for materials and equipment. What was once impossible is now scalable and affordable.
-              </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                  <Cpu className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">AI Technology Maturity</h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  AI-powered 3D reconstruction has reached commercial viability, enabling rapid and accurate facial modeling from photos.
+                </p>
+              </div>
+              
+              <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Social Attitudes Evolving</h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  Cultural attitudes toward death are shifting, with more people embracing advance planning and personalized farewells.
+                </p>
+              </div>
+              
+              <div className="fade-in bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                  <Factory className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Complete Supply Chains</h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  The rise of humanoid robotics has created comprehensive supply chains for materials, equipment, and expertise.
+                </p>
+              </div>
             </div>
           </div>
         </div>
