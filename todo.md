@@ -112,3 +112,7 @@
 - [x] Connect Partner with Us button to Gmail (bobo.tsuipuichi@gmail.com)
 - [x] Reduce Hero section height from 100vh to 85vh
 - [x] Move scroll indicator icon upward (from bottom-8 to bottom-16)
+
+## Hero Background Update
+- [x] Check version 92d2f946 hero background image
+- [x] Update hero background to match version 92d2f946 (white tunnel design)

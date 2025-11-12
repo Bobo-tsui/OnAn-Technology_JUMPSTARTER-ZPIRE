@@ -53,7 +53,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60 z-10" />
           <img 
-            src="/images/hero-background.png" 
+            src="/images/hero-background-new.png" 
             alt="Journey to light" 
             className="w-full h-full object-cover"
           />
