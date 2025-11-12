@@ -49,7 +49,7 @@ export default function Home() {
     <div className="min-h-screen">
       <MobileMenu sections={menuSections} />
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-background text-foreground overflow-hidden pt-16">
+      <section id="hero" className="relative min-h-[85vh] flex items-center justify-center bg-background text-foreground overflow-hidden pt-16">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/60 z-10" />
           <img 
@@ -79,7 +79,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-bounce z-20">
           <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex items-start justify-center p-2">
             <div className="w-1.5 h-3 bg-foreground/50 rounded-full" />
           </div>
@@ -526,6 +526,7 @@ export default function Home() {
                 size="lg"
                 variant="default"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95 transition-transform text-lg px-8 py-6 h-auto min-h-[48px] touch-manipulation"
+                onClick={() => window.location.href = 'mailto:bobo.tsuipuichi@gmail.com?subject=Partnership Inquiry - OnAn Technology'}
               >
                 Partner With Us
               </Button>

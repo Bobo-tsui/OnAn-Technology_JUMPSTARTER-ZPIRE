@@ -105,3 +105,10 @@
 - [x] Rollback to version 28a44155
 - [x] Restore original mouse scroll wheel icon
 - [x] Verify display matches version 28a44155
+
+
+## Navigation and Hero Section Fixes
+- [x] Restore navigation font settings from version 92d2f946 (Playfair Display)
+- [x] Connect Partner with Us button to Gmail (bobo.tsuipuichi@gmail.com)
+- [x] Reduce Hero section height from 100vh to 85vh
+- [x] Move scroll indicator icon upward (from bottom-8 to bottom-16)
