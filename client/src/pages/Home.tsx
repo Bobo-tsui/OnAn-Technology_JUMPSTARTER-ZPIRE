@@ -364,11 +364,11 @@ export default function Home() {
             
             <div className="bg-background rounded-lg p-8 shadow-sm">
               <Users className="h-12 w-12 text-accent mb-4" />
-              <h3 className="text-2xl font-semibold mb-4">Population</h3>
+              <h3 className="text-2xl font-semibold mb-4">Demand & Supply</h3>
               <div className="space-y-4">
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-1">86M</div>
-                  <p className="text-muted-foreground">Population in Greater Bay Area</p>
+                  <div className="text-3xl font-bold text-primary mb-1">447K</div>
+                  <p className="text-muted-foreground">Annual deaths in Greater Bay Area</p>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-1">31</div>

@@ -116,3 +116,8 @@
 ## Hero Background Update
 - [x] Check version 92d2f946 hero background image
 - [x] Update hero background to match version 92d2f946 (white tunnel design)
+
+## Market Opportunity Data Update
+- [x] Update "Population" to "Demand & Supply"
+- [x] Update "86M" to "447K"
+- [x] Update "Population in Greater Bay Area" to "Annual deaths in Greater Bay Area"
