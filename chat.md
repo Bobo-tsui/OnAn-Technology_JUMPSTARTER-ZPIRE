@@ -6,7 +6,7 @@
 **Development Period**: November 2025  
 **AI Tool Used**: Manus AI (Autonomous AI Agent)  
 **Final Version**: f2a117db  
-**Repository**: https://github.com/Bobo-tsui/OnAn-Technology_JUMPSTARTER-ZPIRE
+**Repository**: https://github.com/Bobo-tsui/OnAn-Technology_JUMPSTARTER-ZPIRE  
 **Hosted Landing Page**: 
 https://onan-technology.netlify.app/
 https://onantechnology.manus.space
